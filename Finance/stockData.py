@@ -32,7 +32,9 @@ class STOCKFRAME:
         self.stock_data_client = StockHistoricalDataClient(self.api_key, self.secret_key)
         self.options_data_client = OptionHistoricalDataClient(self.api_key, self.secret_key)
 
+        # Dict[symbol: pl.DataFrame]
         self.data_map: Dict[str: pl.DataFrame] = {}
+        # Dict[symbol: Indicators...]
         self.indicator_map: Dict[str: List] = {}
 
     ############################################### historical data #############################################

@@ -22,13 +22,10 @@ from alpaca.trading.requests import *
 from alpaca.trading.enums import *
 from alpaca.common.exceptions import APIError
 
-api_key="PK1W74P0496MXUUAD8NC"
-secret_key="wJH4Zg4OSwCRplkxzhWHp21YMb7QvzHviXxRwxAF"
+
 log = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 #may have to alter sleep times coz if orders r rapid dk how its gonna react
-
-
 
 class TradeStream:
     def __init__(self, paper: bool = True, url_override: str = None, websocket_params: Optional[Dict] = None,

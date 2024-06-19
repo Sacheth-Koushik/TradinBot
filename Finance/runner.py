@@ -20,8 +20,6 @@ api_key = os.getenv("api_key")
 secret_key = os.getenv("secret_key")
 
 bot = BOT(api_key = api_key, secret_key = secret_key)
-# pl.options.display.max_rows = None
-# pl.options.display.max_columns = None
 
 with pl.Config() as cfg:
     cfg.set_tbl_cols(-1)

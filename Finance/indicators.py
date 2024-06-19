@@ -31,3 +31,26 @@ class INDICATORS:
         self.stockFrame = stockFrame
         # the data needed and will be on the dataFrame is open, high, low, close, volume, trade_count, vwap, exchange
 
+    '''
+    ma, macd, rsi, adx, exponentially ma, 
+    
+    open interest
+    PCR
+    VWAP
+    Fibonacci Retreatment
+    RSI
+    EMA
+    Bollinger Bands
+    IMI(Like RSI) 
+    
+    macd, rsi, ema, bollinger bands, supertrend (length20, factor2), adx, vwap, pcr (put call ratio), 
+    anchored vwap, pivot points, atr (used with trailing stops), bollinger bands, stochastic oscillators, fibonacci
+
+    volume profile, stochastic oscillator, donchain channel (sideways), bollinger bands ( sideways), ichimoku cloud
+    
+    do not use vwap on low liquid stocks, only on high liquid stocks.... 
+    donot use vwap on index spots, use it on index futures as index spots have no volm in them
+    
+    '''
+
+
