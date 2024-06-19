@@ -555,12 +555,10 @@ class ORDERS:
 
 
 
-if __name__ == '__main__':
-    api_key = "PK1W74P0496MXUUAD8NC"
-    secret_key = "wJH4Zg4OSwCRplkxzhWHp21YMb7QvzHviXxRwxAF"
-    trade_client = TradingClient(api_key, secret_key)
-    portfolio = PORTFOLIO(trade_client)
-    o = ORDERS(api_key=api_key, secret_key=secret_key, portfolio=portfolio, trade_client=trade_client)
+# if __name__ == '__main__':
+#     trade_client = TradingClient(api_key, secret_key)
+#     portfolio = PORTFOLIO(trade_client)
+#     o = ORDERS(api_key=api_key, secret_key=secret_key, portfolio=portfolio, trade_client=trade_client)
 
 
 

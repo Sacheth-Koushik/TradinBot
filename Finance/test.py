@@ -3,14 +3,12 @@ import websockets
 import json
 import polars as pl
 
-api_key="PK1W74P0496MXUUAD8NC"
-secret_key="wJH4Zg4OSwCRplkxzhWHp21YMb7QvzHviXxRwxAF"
 
 async def on_message(message):
     print("Received message:", message)
 
 
-async def run_websocket():
+async def run_websocket(api_key, secret_key):
     uri = "wss://paper-api.alpaca.markets/stream"
     # uri = 'wss: // stream.data.alpaca.markets / v2 / iex'
     async with websockets.connect(uri) as websocket:
