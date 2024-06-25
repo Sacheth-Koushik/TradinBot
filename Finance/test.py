@@ -1,69 +1,47 @@
-import asyncio
-import websockets
-import json
-import polars as pl
+from collections import *
+from decimal import Decimal
+from heapq import *
+from bisect import *
+from itertools import *
+from math import *
+from functools import *
+import os
+import sys
+
+if os.path.exists('input.txt'):
+    sys.stdin = open("input.txt", "r")
+    sys.stdout = open("output.txt", "w")
 
 
-async def on_message(message):
-    print("Received message:", message)
+def db(ip):
+    if os.path.exists("output.txt"):
+        print(ip)
 
 
-async def run_websocket(api_key, secret_key):
-    uri = "wss://paper-api.alpaca.markets/stream"
-    # uri = 'wss: // stream.data.alpaca.markets / v2 / iex'
-    async with websockets.connect(uri) as websocket:
-        # Authenticate
-        auth_data = {
-            "action": "auth",
-            "key": api_key,
-            "secret": secret_key
-        }
-        await websocket.send(json.dumps(auth_data))
-        response = await websocket.recv()
-
-        auth_response = json.loads(response)
-        pretty_json = json.dumps(auth_response, indent=4)
-        print("Auth response:", pretty_json)
-
-        if auth_response.get('data', '').get('status', '') != 'authorized':
-            print("Authentication failed:", pretty_json)
-            return
-
-        # Subscribe to trade updates
+def strin(): return sys.stdin.readline().strip()
+def arrin(): return list(map(int, sys.stdin.readline().split()))
+def intin(): return int(sys.stdin.readline())
 
 
-        listen_message = {
-            "action": "listen",
-            "data": {
-                "streams": ["trade_updates"]  # Replace with your desired symbol(s)
-            }
-        }
-        await websocket.send(json.dumps(listen_message))
-        message = await websocket.recv()
-        await on_message(message)
+sys.setrecursionlimit(10 ** 7)
 
 
-        # Receive messages
-        while True:
-            try:
-                await websocket.send(json.dumps(listen_message))
-                message = await websocket.recv()
-                await on_message(message)
-            except websockets.exceptions.ConnectionClosed as e:
-                print("Connection closed:", e)
-                break
-            except Exception as e:
-                print("Error receiving message:", e)
+# ----------------------------------------------------------------------------
+def solve():
 
 
-# Run the event loop
-if __name__ == "__main__":
-    # asyncio.get_event_loop().run_until_complete(run_websocket())
-    # asyncio.get_event_loop().run_forever()
-    l = {
-        "id": [1, 2, 3],
-        "name": ["a", "b", "c"]
-    }
 
-    df = pl.DataFrame(l)
-    print(df)
+
+
+
+
+# ------------------------------------------------------------------------------
+# t = int(sys.stdin.readline())
+t = 1
+for _ in range(t):
+    try:
+        print(solve())
+    except Exception as e:
+        print(e)
+sys.stdout.close()
+sys.stdin.close()
